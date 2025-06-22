@@ -2,8 +2,8 @@ name: Daily Auto Commit
 
 on:
   schedule:
-    - cron: '5 15 * * *'
-  workflow_dispatch:
+    - cron: '10 15 * * *'  # 20:35 IST
+  workflow_dispatch:       # allows manual test run
 
 jobs:
   auto-commit:
