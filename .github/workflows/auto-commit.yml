@@ -2,10 +2,8 @@ name: Daily Auto Commit
 
 on:
   schedule:
-    # Runs every day at 04:15 UTC — adjust as needed
     - cron: '15 4 * * *'
-
-  workflow_dispatch:  # (optional) so you can trigger manually for testing
+  workflow_dispatch:
 
 jobs:
   auto-commit:
@@ -14,6 +12,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit by 23f3004135@ds.study.iitm.ac.in
         run: |
